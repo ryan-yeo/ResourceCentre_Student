@@ -135,7 +135,7 @@ public class ResourceCentreTest {
 		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CC0011");
 		assertFalse("Test if available chromebook CC001 is unable to return", isReturned);
 
-		// Test if item is unavailable so that it can be returned
+		// Test if item is unavailable so that it can be returneds
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CC0012");
