@@ -31,7 +31,7 @@ public class ResourceCentreTest {
 		chromebookList= new ArrayList<Chromebook>();
 	}
 
-	
+	dsa
 	@Test
 	public void addCamcorderTest() {
 		// Item list is not null, so that can add a new item
