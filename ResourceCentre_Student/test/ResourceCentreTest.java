@@ -31,7 +31,6 @@ public class ResourceCentreTest {
 		chromebookList= new ArrayList<Chromebook>();
 	}
 
-	dsa
 	@Test
 	public void addCamcorderTest() {
 		// Item list is not null, so that can add a new item
@@ -48,6 +47,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	}
+	
 	@Test
 	public void addChromebookTest() {
 		//fail("Not yet implemented");
