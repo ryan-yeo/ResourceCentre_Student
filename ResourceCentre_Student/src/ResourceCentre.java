@@ -6,7 +6,7 @@ public class ResourceCentre {
 
 		ArrayList<Camcorder> camcorderList = new ArrayList<Camcorder>();
 		ArrayList<Chromebook> chromebookList = new ArrayList<Chromebook>();
-s
+
 		camcorderList.add(new Camcorder("CC001", "Sony HDR-CX405", 35));
 		camcorderList.add(new Camcorder("CC002", "Panasonic HC-MDH2", 10));
 		chromebookList.add(new Chromebook("CB001", "ASUS Chromebook ", "Win 10"));
@@ -212,14 +212,33 @@ s
 	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
-		return true;
+		boolean isLoaned = false;
+
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
+					&& chromebookList.get(i).getIsAvailable() == true) {
+				
+				chromebookList.get(i).setIsAvailable(false);
+				chromebookList.get(i).setDueDate(dueDate);
+				
+				isLoaned = true;
+			}
+		}
+		return isLoaned;
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
-		
+		ResourceCentre.viewAllChromebook(chromebookList);
+		String tag = Helper.readString("Enter asset tag > ");
+		String due = Helper.readString("Enter due date > ");
+		Boolean isLoaned = doLoanChromebook(chromebookList, tag, due);
+		if (isLoaned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Chromebook " + tag + " loaned out");
+		}
 		
 	}
-	
 	//================================= Option 4 Return =================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
