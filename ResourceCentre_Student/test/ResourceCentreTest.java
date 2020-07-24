@@ -35,22 +35,6 @@ public class ResourceCentreTest {
 	public void addCamcorderTest() {
 	    
 		// Item list is not null, so that can add a new item
-<<<<<<< HEAD
-		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
-
-		// Given an empty list, after adding 1 item, the size of the list is 1
-		ResourceCentre.addCamcorder(camcorderList, cc1);
-		assertEquals("Test if that Camcorder arraylist size is 1?", 1, camcorderList.size());
-
-		// The item just added is as same as the first item of the list
-		assertSame("Test that Camcorder is added same as 1st item of the list?", cc1, camcorderList.get(0));
-
-		// Add another item. test The size of the list is 2?
-		ResourceCentre.addCamcorder(camcorderList, cc2);
-		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
-	}
-
-=======
 	    assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 
 	    // Given an empty list, after adding 1 item, the size of the list is 1
@@ -65,13 +49,9 @@ public class ResourceCentreTest {
 	    assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	    } 
 	
->>>>>>> branch 'master' of https://github.com/ryan-yeo/ResourceCentre_Student.git
 	@Test
 	public void addChromebookTest() {
-<<<<<<< HEAD
-		// fail("Not yet implemented");
-		// write your code here
-=======
+
 
 	     // NICOLE
 	     // fail("Not yet implemented"); 
@@ -89,29 +69,19 @@ public class ResourceCentreTest {
 	     ResourceCentre.addChromebook(chromebookList, cb2);
 	     assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
 	    }
->>>>>>> branch 'master' of https://github.com/ryan-yeo/ResourceCentre_Student.git
-	}
+
 
 	@Test
 	public void retrieveAllCamcorderTest() {
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 
-<<<<<<< HEAD
-		// test if the list of camcorders retrieved from the SourceCentre is empty
-		String allCamcorder = ResourceCentre.retrieveAllCamcorder(camcorderList);
+		//test if the list of camcorders retrieved from the SourceCentre is empty
+		String allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
 		String testOutput = "";
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
-
-		// Given an empty list, after adding 2 items, test if the size of the list is 2
-=======
-		//test if the list of camcorders retrieved from the SourceCentre is empty
-				String allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
-				String testOutput = "";
-				assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 				
 		//Given an empty list, after adding 2 items, test if the size of the list is 2
->>>>>>> branch 'master' of https://github.com/ryan-yeo/ResourceCentre_Student.git
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
@@ -156,11 +126,8 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		// fail("Not yet implemented");
 		// write your code here
-<<<<<<< HEAD
 
-=======
 		// Item list is not null, so that can loan an item
-		
 		assertNotNull("Test if there is valid Camcorder arraylist to loan", camcorderList);
 	
 		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
@@ -171,16 +138,13 @@ public class ResourceCentreTest {
 		boolean op02 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "29-7-2020");
 		assertEquals(false, op02);
 		
->>>>>>> branch 'master' of https://github.com/ryan-yeo/ResourceCentre_Student.git
 	}
 
 	@Test
 	public void doLoanChromebookTest() {
 		// fail("Not yet implemented");
 		// write your code here
-<<<<<<< HEAD
 
-=======
 		// Item list is not null, so that can loan an item
 		
 		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
@@ -193,7 +157,7 @@ public class ResourceCentreTest {
 						
 		boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
 		assertEquals(false, op02);
->>>>>>> branch 'master' of https://github.com/ryan-yeo/ResourceCentre_Student.git
+
 	}
 
 	@Test
@@ -231,6 +195,7 @@ public class ResourceCentreTest {
 		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CC0011");
 		assertFalse("Test if available chromebook CC001 is unable to return", isReturned);
 
+		
 		// Test if item is unavailable so that it can be returneds
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
