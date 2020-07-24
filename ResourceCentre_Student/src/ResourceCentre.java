@@ -154,31 +154,34 @@ s
 		System.out.println(output);
 	}
 
-	//================================= Option 2 Add =================================
-	public static Camcorder inputCamcorder() {
-		String tag = Helper.readString("Enter asset tag > ");
-		String description = Helper.readString("Enter description > ");
-		int zoom = Helper.readInt("Enter optical zoom > ");
+	// ================================= Option 2 Add
+		// =================================
+		public static Camcorder inputCamcorder() {
+			String tag = Helper.readString("Enter asset tag > ");
+			String description = Helper.readString("Enter description > ");
+			int zoom = Helper.readInt("Enter optical zoom > ");
 
-		Camcorder cc= new Camcorder(tag, description, zoom);
-		return cc;
-		
-	}
-	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
-		
-		camcorderList.add(cc);
-		System.out.println("Camcorder added");
-	}
-	
-	public static Chromebook inputChromebook() {	
-		Chromebook cb =null;
-		// write your code here
-		return cb;
-		
-	}	
-	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
-		// write your code here
-	}
+			Camcorder cc = new Camcorder(tag, description, zoom);
+			return cc;
+
+		}
+
+		public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
+
+			camcorderList.add(cc);
+			System.out.println("Camcorder added");
+		}
+
+		public static Chromebook inputChromebook() {
+			Chromebook cb = null;
+			// write your code here
+			return cb;
+
+		}
+
+		public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
+			// write your code here
+		}
 	
 	//================================= Option 3 Loan =================================
 	public static boolean doLoanCamcorder(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
